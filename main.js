@@ -99,3 +99,71 @@ user2.name = "Kevin"
 user2.age = 54
 console.log(user2)
 console.log(user2.showFullName())
+
+//Objetos vacíos
+
+const obj1 = new Object(345)
+
+console.log(obj1)
+const obj2 = {}
+console.log(obj2.constructor === Object)
+
+//Accediendo a las claves y valores 
+
+const Coche = {
+    modelo: "",
+    año: "",
+    precio: 10000,
+    mostrarMolelo: function() {
+        return modelo
+         
+    }
+
+}
+
+console.log(Object.keys(Coche))
+Coche.modelo = "Crevrolet"
+console.log(Object.values(Coche))
+
+// ASIGNANDO VALORES AL OBJETO QUE LO CONTIENE
+
+const Ciudad = {
+    detalles: function() {
+        this.name = "norte",
+        this.geo = "",
+        this.habitantes = 1349432
+   }
+}
+
+
+const lugar1 = new Ciudad.detalles()
+
+console.log(lugar1)
+console.log(Ciudad)
+
+/// CREAR MÉTODOS A PARTIR DE CONSTRUCTORES
+
+function Gorra() {
+    this.marca = "Tomy",
+    this.precio = 5,
+    this.color = "grey"
+    this.marcaPrecio =  function() {
+        return this.marca + this.precio
+    }
+}
+
+
+const gorra1 = new Gorra
+console.log(gorra1.marcaPrecio())
+
+gorra1.estado = function(){
+    return "Estamos accediendo a" + this.color
+}
+console.log(gorra1.estado())
+
+
+gorra1.marcaPrecioDesdeFuera = function() {
+    return "La propiedad marcaPrecio del constructor es" + this.marcaPrecio()
+    
+}
+console.log(gorra1.marcaPrecioDesdeFuera())
