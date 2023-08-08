@@ -167,3 +167,47 @@ gorra1.marcaPrecioDesdeFuera = function() {
     
 }
 console.log(gorra1.marcaPrecioDesdeFuera())
+
+// Repaso contructor:
+
+function Casa() {
+    this.techo = "zinc"
+}
+
+const vivienda = new Casa
+console.log(vivienda.techo)
+
+const person2 = {}
+console.log(person2.constructor)
+
+
+const parte1 = new Object("Es la primera parte")
+
+parte1.otraMitad = function() {
+    return this + "segunda parte"
+}
+
+console.log(parte1.otraMitad())
+
+// 
+
+const makind = {
+    Person: function () {
+        "use strict"
+        this.name =  ""
+        this.lasName = ""
+    }
+}
+const sinNew = makind.Person()
+console.log(sinNew)
+console.log(makind)
+
+// Modiicando Objetos ya creados
+
+const  s = new String("hola soy el objeto texto")
+
+String.prototype.cualquieCosa = function () {
+    return this + "test"
+}
+
+console.log(s.cualquieCosa())
