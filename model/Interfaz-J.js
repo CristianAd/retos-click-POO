@@ -1,7 +1,4 @@
-import { InterfazG } from "./InterfazG.js"
-import { mostrarTarjetas } from "../main.js"
-
- 
+import { CustomJugadores } from "./CustomsJugadores.js"
 export class interfazJ{
         constructor(nombreR){
             this.nombreR = nombreR
@@ -9,7 +6,7 @@ export class interfazJ{
 
 
         popUp(){
-         const zonaG =   document.getElementById("zonaG")
+         const popUpHome = document.getElementById("popUpHome")
          const popUpHtml = `
          <div id="popupContainerHome">
          <div id="popupBoxHome">
@@ -23,9 +20,13 @@ export class interfazJ{
                      
                          <div id="customNumberInput">
                            
-                             <button id="decreaseButton">-</button>
-                             <input type="number" class="center-input" id="numberInput" min="12" max="50" value="12" />
-                             <button id="increaseButton">+</button>
+                                    <div class="slider-container">
+                                    <div id="slider">
+                                    <div id="slider-button"></div>
+                                    </div>
+                                    <span id="value">12</span>
+                                    </div>
+
                            </div>
  
                            <div>
@@ -34,24 +35,49 @@ export class interfazJ{
                      </div>
                  </div>
                  
-                 <button>A jugar</button>
+                 <button id="irAltablero">A jugar</button>
          </div>
        </div>
          `
 
 
-         zonaG.innerHTML =popUpHtml
+         const tarjetasHome =   document.getElementById("tarjetasHome")
+            tarjetasHome.style.display = "none"
+         popUpHome.innerHTML = popUpHtml
+
+         
+
+        const customPlayer = new CustomJugadores()
+        const btnAdd = document.getElementById("btnAgregar")
+       
+
+
+        btnAdd.addEventListener("click", ()=>{
+            customPlayer.agregarJugadores()
+            
+        })
+
+             
+
         }
 
     cerrarPopUp(){
         const cerrarPopH = document.getElementById("cerrarPopH")
         cerrarPopH.addEventListener("click", ()=>{
             const popupContainerHome = document.getElementById("popupContainerHome")
-            popupContainerHome.style.display = "none"
 
-            mostrarTarjetas()
+            popupContainerHome.style.display = "none"
+            tarjetasHome.style.display = "flex"
+       
+
+
+
+
             
+           
         })
     }
+
+ 
         
 }

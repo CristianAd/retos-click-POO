@@ -1,5 +1,4 @@
-import { InterfazG } from "./model/InterfazG.js"
-import { retos } from "./data/retos.js"
+import {CustomJugadores} from "./model/CustomsJugadores.js"
 import { interfazJ } from "./model/Interfaz-J.js"
 
 
@@ -18,17 +17,7 @@ cerrar.addEventListener("click", ()=>{
 })
 
 
-/*SHOW TARJETAS */
-
-export function mostrarTarjetas() {
-    const tarjetasIncio = new InterfazG()
-    tarjetasIncio.tarjetas()
-
-}
-
-mostrarTarjetas()
-
-//Importamo tablero /*  #deportivas, #noviazgo, #trivias, #verdadDesafio, #cocina, #amistad  */
+/*MAIN CONTENIDO */
 
 
 const deportivas = document.getElementById("deportivas");
@@ -39,6 +28,7 @@ const cocina = document.getElementById("cocina")
 const trivias = document.getElementById("trivias")
 
  
+const nivelJuego = new CustomJugadores()
 
 function selections(param) {
 
@@ -48,7 +38,10 @@ function selections(param) {
         const interfazj = new interfazJ(tipoDeporte);  
         interfazj.popUp()
         interfazj.cerrarPopUp()
-
+        nivelJuego.ajustesMeta()
+        nivelJuego.verificador()
+        
+        
         
     });
 
@@ -61,5 +54,10 @@ selections(amistad)
 selections(verdadDesafio)
 selections(cocina)
 selections(trivias)
+
+
+
+
+
 
  

@@ -1,21 +1,9 @@
+
 export class InterfazG{
     constructor(){}
 
 
-    tarjetas(){
-      const tarjetasH = `
-      <div id="tarjetasHome">
-      <div id="deportivas">Deportivas</div>
-      <div id="noviazgo">Noviazgo</div> 
-      <div id="trivias">Trivias</div>
-      <div id="verdadDesafio">Verdad o desafio</div>
-      <div id="cocina">Cocina</div>
-      <div id="amistad">Amistad</div>
-      </div>`
 
-     const zonaG = document.getElementById("zonaG")
-     zonaG.innerHTML = tarjetasH
-    }
 
     tablero(){
       const tarjetasHome =  document.getElementById("tarjetasHome")
@@ -36,6 +24,7 @@ export class InterfazG{
       zonaG.innerHTML = tableroG
        
     }
+
 
 
 }
