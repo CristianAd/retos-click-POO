@@ -1,12 +1,22 @@
+import { InterfazG } from "./InterfazG.js";
+
+const llevarTablero = new InterfazG()
 
 export class CustomJugadores {
     constructor(participa){
-        this.participantes = participa
+      this.saludando = "hola mundo"
+        this.participantes = this.saludando
     }
 
 
 
     agregarJugadores(){
+
+      /* MUESTRA NUMERO JUGADORES */
+
+        
+      
+  ///////////////////////////////////////
         
             
         const btnAgregar = document.getElementById("btnAgregar");
@@ -44,8 +54,10 @@ export class CustomJugadores {
           // Obtener los nombres existentes de los jugadores
           const nombresExistentes = Array.from(jugadoresN.children).map(jugador => {
             return jugador.querySelector('.nombre').value;
+             
           });
-        
+     
+           
           // Encontrar el siguiente nombre disponible
           let nuevoNombre = "";
           for (let i = 1; i <= 4; i++) {
@@ -93,18 +105,24 @@ export class CustomJugadores {
         
           // Actualizar el estado de los botones
           actualizarEstadoBotones();
+          
         }
 
         
-       const jugadores = document.getElementById("jugadores")
-        this.participantes = jugadores.childElementCount
 
-  
+
+        const jugadores = document.getElementById("jugadores")
+        const numerodeJugadores = jugadores.childElementCount
+        console.log(numerodeJugadores)
+         
+        const irAltablero=document.getElementById("irAltablero")
+        irAltablero.style.display = "block"
+
         
 
 
     }
-
+ 
     ajustesMeta(){
         const slider = document.getElementById("slider");
         const sliderButton = document.getElementById("slider-button");
@@ -161,14 +179,38 @@ export class CustomJugadores {
     }
 
 
-    verificador(){
+    capturaDatosJuego(){
               /* PRUEBA UNITARIA */
         
-              const irAltablero=document.getElementById("irAltablero")
-              const jugador = document.querySelector(".jugador")
+              const irAltablero = document.getElementById("irAltablero")
+              const jugadores = document.getElementById("jugadores")
   
               irAltablero.addEventListener("click", ()=>{
-                  console.log(this.participantes)
+  
+                  if (jugadores.childElementCount > 0) {
+                    console.log("Puedes ir al juego")
+
+                    const jugadores = document.getElementById("jugadores");
+                    const nJugad = Array.from(jugadores.children).map(nJugad => {
+                     return nJugad.firstElementChild.value.trim();
+                    });
+
+                   const premioDefinido = document.getElementById("premio")
+                    const nivelMeta = document.getElementById("value")
+                    
+                    console.log(nJugad)
+                    console.log(premioDefinido.value)
+                    console.log(nivelMeta.textContent)
+
+                    llevarTablero.tablero()
+                    
+                    
+                  }else{
+                    
+                    alert("Agrega un jugador")
+                    
+
+                  }
   
               })
     }

@@ -39,7 +39,10 @@ function selections(param) {
         interfazj.popUp()
         interfazj.cerrarPopUp()
         nivelJuego.ajustesMeta()
-        nivelJuego.verificador()
+         nivelJuego.capturaDatosJuego()
+         
+        const btnIrTablero =document.getElementById("irAltablero")
+        btnIrTablero.style.display = "none"
         
         
         

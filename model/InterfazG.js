@@ -9,7 +9,9 @@ export class InterfazG{
       const tarjetasHome =  document.getElementById("tarjetasHome")
       const zonaG = document.getElementById("zonaG")
       tarjetasHome.innerHTML = ""
-      const tableroG = `    <div id="gameT">
+      const tableroG = `   
+      <div id="zonaJugadores">zonaJugadores</div>
+      <div id="gameT">
       <div class="item">1</div>
       <div class="item">2</div>
       <div class="item">3</div>

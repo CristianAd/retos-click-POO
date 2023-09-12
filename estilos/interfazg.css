@@ -1,0 +1,22 @@
+/*ZONA JUGADORES*/
+#zonaJugadores{
+    display: flex;
+   margin: 0.5rem 0.5rem;
+   width: auto;
+   margin-bottom: 1rem; 
+}
+#zonaJugadores div{
+   border: 1px solid white;
+   margin: 0 0;
+   background-color: wheat;
+   border-radius: 1rem;
+   color: white;
+   padding: 0.3rem;
+}
+#zonaJugadores .players :first-child{
+   background-color: #850049;
+}
+#zonaJugadores .players :last-child{
+   background-color: white;
+   color: black
+}
