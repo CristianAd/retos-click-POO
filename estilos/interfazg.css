@@ -1,10 +1,19 @@
+.area-superior-juego{
+   display: flex;
+  
+}
+
 /*ZONA JUGADORES*/
 #zonaJugadores{
     display: flex;
    margin: 0.5rem 0.5rem;
    width: auto;
-   margin-bottom: 1rem; 
+   margin-bottom: 1rem;
+  
 }
+
+
+
 #zonaJugadores div{
    border: 1px solid white;
    margin: 0 0;
@@ -13,6 +22,7 @@
    color: white;
    padding: 0.3rem;
 }
+
 #zonaJugadores .players :first-child{
    background-color: #850049;
 }
@@ -20,3 +30,122 @@
    background-color: white;
    color: black
 }
+
+/*DEAMANTE PARA LA META DEL JUEGO*/
+.metaJuego{
+   border: 1px solid beige;
+   padding: 1rem;
+   border-radius: 1rem;
+   background-color:  #c71585;
+   color: beige;
+    font-weight: 800;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 1rem;
+   
+    
+ }
+
+
+
+/* */
+
+.contenedorCuadros1{
+   display: flex;
+   justify-content: space-between;
+   background-color: #850049;
+   width: 100%;
+   display: flex;
+}
+
+
+
+.contenedorCuadros3{
+   display: flex;
+   justify-content: space-between;
+   background-color: #850049;
+   width: 100%;
+   display: flex;
+}
+
+
+
+.zonaMedia{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #00506d;
+}
+
+.rigthZone{
+   display: flex;
+}
+
+.bottomZone{
+   display: flex;
+
+}
+
+.cajasA, .cajasB, .cajasC, .cajasD{
+       display: flex;
+       width: 5rem;
+       height: 5rem;
+       border: 1px solid white;
+       color: wheat;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       
+}
+
+
+.menuBtnHomeZone{
+   width: 100%;
+   height: 10%;
+   margin: 2rem 0;
+   margin-bottom: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.homeBtn{
+   
+   width: 5rem;
+   text-align: center;
+   padding: 0.5rem;
+   font-weight: 800;
+   background-color: rgb(214, 2, 104);
+   box-shadow: rgba(0, 0, 0, 0.1) 15px 15px 15px;
+   color: rgb(255, 255, 255);
+   height: 2rem;
+   width: 5rem;
+   border-radius: 0.5rem;
+   transition: background-color 1s ease 0s;
+}
+
+.homeBtn2{
+  margin-top: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  
+   
+
+}
+
+#playGame{
+   background-color: rgb(214, 2, 104);
+   box-shadow: rgba(0, 0, 0, 0.1) 15px 15px 15px;
+   color: white;
+   font-weight: 800;
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   transition: background-color 1s ease 0s;
+}
+
+
+

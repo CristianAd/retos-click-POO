@@ -1,384 +1,56 @@
- 
-body{
-    background-color: #333;
-}
-#popupContainer {
- 
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
-  }
-  
-  #popupBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-    font-weight: 800;
-  }
-  #popupBox div {
-    color: yellow;
-  
-  }
-  .cajaPuntos{
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-     
-  }
-  #btnReclamar{
-    background-color: #CC2830;
-    color: aliceblue;
-    font-size: large;
-    width: 8rem;
-    margin-top: 1rem;
-    height: 3rem;
-  }
-  
-  #closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  #closeButton:hover {
-    color: red;
-  }
-   
+/*Temporal*/
 
-#popupContainer {
- 
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 9999;
-  }
-  
-  #popupBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-    font-weight: 800;
-  }
-  #popupBox div {
-    color: yellow;
-  
-  }
-  .cajaPuntos{
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-     
-  }
-  #btnReclamar{
-    background-color: #CC2830;
-    color: aliceblue;
-    font-size: large;
-    width: 8rem;
-    margin-top: 1rem;
-    height: 3rem;
-  }
-  
-  #closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  #closeButton:hover {
-    color: red;
-  }
-
-
-  
-/*Pop up home*/
-
-#popupContainerHome {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
-}
-#retoSelected {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: #fff;
-}
-
-#tituloReto{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-  color: white;
-  background: linear-gradient(to bottom, rgba(40, 5, 73, 1), rgba(40, 5, 73, 0.5));
-}
-
-#tituloReto h2{
-    margin-left: calc(33%);
-}
-
-#tituloReto span{
-     border: 1px solid black;
-     margin-right: 0.8rem;
-     font-size: x-large;
-     padding: 0.3rem 1rem;
-     cursor: pointer;
-
-}
-
-#popupBoxHome {
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  background-color: #f4f4f4;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  text-align: center;
-}
-
-#closeButtonHome {
- 
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  font-size: larger;
-  border: 1px solid wheat;
-  width: 2rem;
-  height: 1.6rem;
-  font-weight: 800;
-  color: white;
-  background-color: #245a19;
-  cursor: pointer;
-}
-
-#closeButtonHome:hover {
-  color: black;
-  background-color: #4fee2f;
-}
-#btnAgregar{
-  background-color: #a8033a;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-bottom: 1rem;
-  
-}
-#btnAgregar:hover {
-  background-color: #d81b60;
-}
-
-.eliminar{
-  background-color: rgb(74, 82, 46);
-  color: aliceblue;
- 
-  padding: 0.3rem;
-  margin-bottom: 1rem;
-  
-
-}
-
-#jugadores{
+#gameT{
+    
+  width: 30rem;
+  border: 1px solid blue;
   display: flex;
-  margin: 0.5rem;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
+  border: 1px solid gold;
+  background-color: #1c1c1c;
   width: 100%;
-}
-.jugador{
-  margin: 0.2rem;
-}
-.jugador input{
-     padding: 0.5rem;
-     margin-right: 0.5rem;
-     background-color: rgb(214, 214, 71);
-}
-
-#premio{
-  padding: 0.5rem;
-  width: 80%;
-  margin-bottom: 1rem;
-  border: 1px dotted black;
-}
-
-#decreaseButton, #increaseButton{
-  background-color: #a8033a;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
- 
-.center-input {
-  background-color: aqua;
-  font-size: x-large;
-  text-align: center;
-}
-#jugar {
- 
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
- 
-#jugar button{
-  margin-top: 1rem;
-  background-color: rgb(40, 5, 73);
-  color: aliceblue;
-  font-size: large;
-  padding: 0.3rem;
- 
-  margin-bottom: 1rem;
 
 }
-/*----------------------------------*/
-.zonBtnReclamar{
+
+.item{
+  width: calc(30% - 10px);
+  height: 5rem;
+  background-color: #a30909;
+  color: #ececec;
   display: flex;
-  justify-content: center ;
-  width: 100%;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-}
-button#btnReclamar {
-  background-color: #f2c94c;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-button#btnReclamar:hover {
-  background-color: #f2b42c;
+  border: 1px solid beige;
+  border-radius: 1rem;
 }
 
 
-/*POP GANADOR*/
- 
-#popupGanador{
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
-}
+/*ZONA JUGADORES*/
 
-#cajaGanador{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 95vh;
+
+#gameContainer{
+  border: 1px solid black;
+  height: 1rem;
+}
+#zonaJugadores{
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 90vw;
-  background-color: #fff;
-  padding: 20px;
-  text-align: center;
- 
+  margin: 0.5rem 0.5rem;
+  width: auto;
+  margin-bottom: 1rem; 
 }
-.btnReintentar{
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 10px;
- 
+#zonaJugadores div{
+  border: 1px solid white;
+  margin: 0 0;
+  background-color: wheat;
+  border-radius: 1rem;
+  color: white;
+  padding: 0.3rem;
 }
-
-.nombreGanador{
-  font-size: 36px;
-  font-weight: bold;
-  margin: 20px 0;
+#zonaJugadores .players :first-child{
+  background-color: #850049;
 }
-.zonaPremioGando {
-  font-size: 24px;
-  margin-bottom: 20px;
+#zonaJugadores .players :last-child{
+  background-color: white;
+  color: black
 }
-
-/*estilos para compartir*/
-button#botonCompartir {
-  background-color: #ff5f5f;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-button#botonCompartir:hover {
-  background-color: #ff3b3b;
-}
-
- 
-
-.redes-sociales {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-}
-
-.redes-sociales li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.redes-sociales li:last-child {
-  margin-right: 0;
-}
-
-.redes-sociales img {
-  width: 30px; /* Ajusta el tamaño de los iconos según tus necesidades */
-  height: 30px;
-}
- 

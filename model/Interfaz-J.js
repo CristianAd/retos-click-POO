@@ -12,7 +12,7 @@ export class interfazJ{
          <div id="popupBoxHome">
            
                  <div id="customGamer">
-                   <div id="tituloReto"> <h2>${this.nombreR}</h2> <span id="cerrarPopH">&times;</span> </div>
+                   <div id="tituloReto"> <h2 id="tipoReto">${this.nombreR}</h2> <span id="cerrarPopH">&times;</span> </div>
                    <div id="jugadores"></div>
                    <button id="btnAgregar" >Agregar jugador</button>
                      <div class="zonaPremio">
@@ -48,6 +48,7 @@ export class interfazJ{
          
 
         const customPlayer = new CustomJugadores()
+         
         const btnAdd = document.getElementById("btnAgregar")
        
 
@@ -79,5 +80,5 @@ export class interfazJ{
     }
 
  
-        
+       
 }

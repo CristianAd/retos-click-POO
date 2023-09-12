@@ -1,5 +1,6 @@
 import {CustomJugadores} from "./model/CustomsJugadores.js"
 import { interfazJ } from "./model/Interfaz-J.js"
+ 
 
 
 
@@ -39,7 +40,7 @@ function selections(param) {
         interfazj.popUp()
         interfazj.cerrarPopUp()
         nivelJuego.ajustesMeta()
-         nivelJuego.capturaDatosJuego()
+        nivelJuego.capturaDatosJuego()
          
         const btnIrTablero =document.getElementById("irAltablero")
         btnIrTablero.style.display = "none"
@@ -59,6 +60,9 @@ selections(cocina)
 selections(trivias)
 
 
+
+
+ 
 
 
 

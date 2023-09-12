@@ -67,32 +67,6 @@ main{
 }
 
 
-/*Temporal*/
-
-#gameT{
-    
-    width: 30rem;
-    border: 1px solid blue;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border: 1px solid gold;
-    background-color: #1c1c1c;
-    width: 100%;
-
-}
-
-.item{
-    width: calc(30% - 10px);
-    height: 5rem;
-    background-color: #a30909;
-    color: #ececec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid beige;
-    border-radius: 1rem;
-}
 /*MEDIA*/
 
 @media screen and (max-width:550px) {
@@ -158,17 +132,14 @@ main{
         width: calc(50% - 10px);
     }
 
-    #gameT{
-        margin:  2rem 0.5rem;
-
-    }
+  
 }
 
 
 @media screen and (min-width: 550px){
     #gameT{
          
-        margin: 2rem calc(30% - 10px);
+        
         height: 27rem;
     }
 

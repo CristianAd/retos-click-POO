@@ -1,11 +1,12 @@
 import { InterfazG } from "./InterfazG.js";
+import { Interactivity } from "./Interactivity.js";
 
 const llevarTablero = new InterfazG()
 
 export class CustomJugadores {
     constructor(participa){
-      this.saludando = "hola mundo"
-        this.participantes = this.saludando
+       
+        this.readyPlayer =  participa
     }
 
 
@@ -178,10 +179,11 @@ export class CustomJugadores {
        
     }
 
-
-    capturaDatosJuego(){
+   
+    capturaDatosJuego(param){
               /* PRUEBA UNITARIA */
-        
+              
+              const tipoReto = document.getElementById("tipoReto").textContent
               const irAltablero = document.getElementById("irAltablero")
               const jugadores = document.getElementById("jugadores")
   
@@ -197,12 +199,26 @@ export class CustomJugadores {
 
                    const premioDefinido = document.getElementById("premio")
                     const nivelMeta = document.getElementById("value")
-                    
-                    console.log(nJugad)
-                    console.log(premioDefinido.value)
-                    console.log(nivelMeta.textContent)
 
-                    llevarTablero.tablero()
+
+                    llevarTablero.tablero(nivelMeta.textContent)
+                    llevarTablero.showTable(tipoReto)
+                    llevarTablero.showPlayerNames(nJugad);
+
+                    const zonaJugadores = document.getElementById("zonaJugadores").firstElementChild
+                    zonaJugadores.style.backgroundColor = "#ff7f00"
+                    
+  
+                    /*Abriendo funcionalidad para empezar el juego */
+
+                  const preuba1 =  new Interactivity()
+                  preuba1.runGame()
+                  llevarTablero.popUpJuegoActivo()
+                  
+                  
+                  
+                  
+                
                     
                     
                   }else{
