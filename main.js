@@ -1,5 +1,6 @@
 import {CustomJugadores} from "./model/CustomsJugadores.js"
 import { interfazJ } from "./model/Interfaz-J.js"
+import { retos } from "./data/retos.js"
  
 
 
@@ -60,7 +61,11 @@ selections(cocina)
 selections(trivias)
 
 
+function mostrarRetos() {
+    return retos
+}
 
+console.log(mostrarRetos().amistades)
 
  
 

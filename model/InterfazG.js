@@ -119,9 +119,10 @@ export class InterfazG{
     }
 
 
-
+/* 
     popUpJuegoActivo(){
-      const popUpHome = document.getElementById("popUpHome")
+       
+      
       const popUpJA = `<div id="popupContainer">
       <div class="turnoJugador"></div>
       <div id="popupBox">
@@ -131,10 +132,16 @@ export class InterfazG{
         <div class="zonBtnReclamar"><button id="btnReclamar" >Reclamar</button></div>
       </div>
     </div>`
+   // const zonaG = document.getElementById("zonaG")
+    // zonaG.innerHTML = popUpJA
+   // const popUpGame = document.getElementById("popUpGame")
      
-    console.log(popUpJA)
+    
+ 
   
   }
+
+*/
 
 
 }

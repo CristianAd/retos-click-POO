@@ -179,8 +179,11 @@ export class CustomJugadores {
        
     }
 
-   
+    
+
+
     capturaDatosJuego(param){
+       
               /* PRUEBA UNITARIA */
               
               const tipoReto = document.getElementById("tipoReto").textContent
@@ -197,6 +200,8 @@ export class CustomJugadores {
                      return nJugad.firstElementChild.value.trim();
                     });
 
+                   
+
                    const premioDefinido = document.getElementById("premio")
                     const nivelMeta = document.getElementById("value")
 
@@ -204,6 +209,7 @@ export class CustomJugadores {
                     llevarTablero.tablero(nivelMeta.textContent)
                     llevarTablero.showTable(tipoReto)
                     llevarTablero.showPlayerNames(nJugad);
+                    
 
                     const zonaJugadores = document.getElementById("zonaJugadores").firstElementChild
                     zonaJugadores.style.backgroundColor = "#ff7f00"
@@ -213,7 +219,8 @@ export class CustomJugadores {
 
                   const preuba1 =  new Interactivity()
                   preuba1.runGame()
-                  llevarTablero.popUpJuegoActivo()
+                  preuba1.jugadoresC = "la meta es des custom"
+                  
                   
                   
                   
