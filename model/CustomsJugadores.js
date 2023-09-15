@@ -219,7 +219,7 @@ export class CustomJugadores {
 
                   const preuba1 =  new Interactivity()
                   preuba1.runGame()
-                  preuba1.jugadoresC = "la meta es des custom"
+                 
                   
                   
                   
