@@ -67,6 +67,9 @@ function mostrarRetos() {
 
 console.log(mostrarRetos().amistades)
 
+
+
+
  
 
 

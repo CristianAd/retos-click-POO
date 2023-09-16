@@ -218,10 +218,11 @@ export class CustomJugadores {
                     /*Abriendo funcionalidad para empezar el juego */
 
                   const preuba1 =  new Interactivity()
-                  preuba1.runGame()
+                 // preuba1.runGame()
+                 preuba1.ejecutar()
                  
                   
-                  
+             
                   
                   
                   
@@ -237,6 +238,8 @@ export class CustomJugadores {
   
               })
     }
+
+
 
 
 
