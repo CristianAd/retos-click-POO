@@ -2,11 +2,12 @@ import { InterfazG } from "./InterfazG.js";
 import { Interactivity } from "./Interactivity.js";
 
 const llevarTablero = new InterfazG()
+const titulo = new Interactivity()
 
 export class CustomJugadores {
-    constructor(participa){
+    constructor(){
        
-        this.readyPlayer =  participa
+
     }
 
 
@@ -179,18 +180,22 @@ export class CustomJugadores {
        
     }
 
-    
+ 
 
-
-    capturaDatosJuego(param){
+    capturaDatosJuego(){
        
               /* PRUEBA UNITARIA */
               
-              const tipoReto = document.getElementById("tipoReto").textContent
               const irAltablero = document.getElementById("irAltablero")
+              const tipoReto = document.getElementById("tipoReto").textContent
+               
+              
+              
+
               const jugadores = document.getElementById("jugadores")
   
               irAltablero.addEventListener("click", ()=>{
+                titulo.cambiaTipoD(tipoReto)
   
                   if (jugadores.childElementCount > 0) {
                     console.log("Puedes ir al juego")
@@ -208,7 +213,9 @@ export class CustomJugadores {
 
                     llevarTablero.tablero(nivelMeta.textContent)
                     llevarTablero.showTable(tipoReto)
+                    
                     llevarTablero.showPlayerNames(nJugad);
+                    
                     
 
                     const zonaJugadores = document.getElementById("zonaJugadores").firstElementChild
@@ -220,14 +227,7 @@ export class CustomJugadores {
                   const preuba1 =  new Interactivity()
                  // preuba1.runGame()
                  preuba1.ejecutar()
-                 
-                  
-             
-                  
-                  
-                  
-                
-                    
+
                     
                   }else{
                     
@@ -237,6 +237,8 @@ export class CustomJugadores {
                   }
   
               })
+                
+              
     }
 
 
