@@ -1,5 +1,4 @@
 import { InterfazElements } from "./AccessDon.js";
-import { CustomJugadores } from "./CustomsJugadores.js";
 import {retos} from "../data/retos.js"
 
 
@@ -13,11 +12,8 @@ const numeroAleatorio = new InterfazElements().generarNumAleatorio()
 let colorOriginal; // Declarar la variable fuera de la función
 let secuencia = 0
 
-
-
-
 export class Interactivity{
-
+ 
 
 
 ///////////////////////////////////////////////////////////
@@ -43,22 +39,53 @@ reclamarPuntos(){
    
    btnReclamar.addEventListener("click", ()=>{
 
-   
+    const valorPrevioP = jugadoresFull.children[secuencia].lastChild.textContent
+    const valorProximo = parseInt(valorPrevioP) + parseInt(numeroAleatorio);
+  
 
-      const valorPrevioP = jugadoresFull.children[secuencia].lastChild.textContent
-      popupContainer.style.display = "block"
-      const valorProximo = parseInt(valorPrevioP) + parseInt(numeroAleatorio)
-      jugadoresFull.children[secuencia].lastChild.textContent = valorProximo + " pts" 
+      if (valorProximo >= parseInt(laMeta.textContent)) {
+        console.log("El "+ valorProximo + "supera a " + parseInt(laMeta.textContent))
+        popupContainer.style.display = "none"
+        document.getElementById("popupGanador").style.display = "block"
+        document.querySelector('.nombreGanador').innerHTML = jugadoresFull.children[secuencia].firstChild.textContent 
+        
 
-      btnReclamar.style.display = "none";
-      nextBtnGame.style.display = "block"
-      secuencia = (secuencia + 1) % numeroParticipantes
-      
-      if (valorProximo > parseInt(laMeta.textContent)) {
-        console.log("El "+ valorPrevioP + "supera a " + laMeta)
+        const elementosJ = document.querySelectorAll('.players');
+        const elementosPlayers = [];
+        elementosJ.forEach(item => {
+                 const losDivs =   item.querySelectorAll('div')
+
+                 for (const div of losDivs) {
+                  if (!div.classList.length) {
+                    elementosPlayers.push(div.innerText);
+                    break;
+                    
+                  }
+                  
+                 }
+
+
+        });
+                         // Filtra los elementos que no coinciden con 'secuencia'
+                         const noAparecen =   elementosPlayers.filter(elemento => elemento !== jugadoresFull.children[secuencia].firstChild.textContent);
+                         // Muestra los elementos que no aparecen en la consola
+
+                         document.getElementById("Perdedores").innerText = noAparecen.join(', ')
+                           console.log("Elementos que no aparecen: " + noAparecen.join(', '));
+
+        
+      }else{
+        
+        popupContainer.style.display = "block"
+       
+        jugadoresFull.children[secuencia].lastChild.textContent = valorProximo + " pts" 
+  
+        btnReclamar.style.display = "none";
+        nextBtnGame.style.display = "block"
+        secuencia = (secuencia + 1) % numeroParticipantes
       }
   
-   
+  
    
     })
 
@@ -89,7 +116,10 @@ pintarSiguiente(indice){
         jugadores[i].style.backgroundColor = ""; // Restablece el color de fondo de los elementos anteriores
       }
     }
+    
   }
+
+  
 
 }
 
@@ -97,12 +127,9 @@ pintarSiguiente(indice){
 closeBtnGame(){
   
    nextBtnGame.addEventListener("click", ()=>{
+    
     popupContainer.style.display = "none"
-  // console.log(jugadoresFull)
 
-  
-  // Función para restaurar el color original de las cajas
- // function restaurarColor() {}
         Array.from(this.conjuntoCajas()).forEach(caja => {
           caja.style.backgroundColor = colorOriginal;
         
@@ -112,15 +139,13 @@ closeBtnGame(){
         btnPush.disabled = false
         this.pintarSiguiente(secuencia)
 
+      
+
    })
   
 
   
    
-}
-
-mostrarTipoJ(param){
-    console.log(param)
 }
 
 
@@ -130,12 +155,12 @@ mostrarTipoJ(param){
     let index = 0
     let jota = 0
     const elementos = this.conjuntoCajas()
-
+    console.log(index, jota)
   
 //////////////////////////////////////////
-  const btnPush = document.getElementById("playGame")
+    const btnPush = document.getElementById("playGame")
     btnPush.addEventListener("click", 
-    
+     
     function pintarCuadros() {  
       if (index < elementos.length) {
         elementos[index].style.backgroundColor = "rgb(147, 0, 255)";
@@ -158,8 +183,6 @@ mostrarTipoJ(param){
             ////////////////////
           document.getElementById("btnReclamar").style.display = "block"
 
-      
-                  
                     const textoReto =  document.getElementById("retoSelected");
 
             /*OBTENER EL CONJUNTO DE RETOS */
@@ -220,7 +243,7 @@ mostrarTipoJ(param){
                    popupBox.insertBefore(nuevoDiv, popupBox.firstChild)
                   ////////
 
-
+                  
                 
   
           
@@ -231,70 +254,40 @@ mostrarTipoJ(param){
       
       btnPush.disabled = true
       nextBtnGame.style.display = "none"
+       
       
-    }
-   
-    
-    )
+    })
    
   
-
-
+ 
+    
     
 
   }
 
-
-alertaGanador() {
- // popupContainer.style.display = "none"
- // document.getElementById("popupGanador").style.display = "block"
- 
-  let puntos = ""
-  const ptsJugador =  document.querySelectorAll('.players')
-  for (let i = 0; i < ptsJugador.length; i++) {
-    puntos = parseInt(ptsJugador[i].lastChild.textContent);
-     if (puntos >= parseInt(laMeta)) {
-        popupContainer.style.display = "none";
-        document.getElementById('popupGanador').style.display = "block"
-        document.querySelector('.nombreGanador').innerHTML = ptsJugador[i].firstChild.textContent
-       console.log(ptsJugador[i].firstChild.textContent + ' ganaste!!')
-     }
+  mostrarMensaje(){
+    document.getElementById("playGame").addEventListener("click", ()=>{
+       
+      console.log("hola")
+      
     
+    })
   }
-  console.log(puntos)
-/*
-  if (puntos >= parseInt(laMeta)) {
-
-    if (JSON.parse(localStorage.getItem('valorPremio')) === "") {
-      document.querySelector('.zonaPremioGando').innerHTML = "Pídele un helado a tu mejor amig@"
-    }else{
-      document.querySelector('.zonaPremioGando').innerHTML = localStorage.getItem('valorPremio');
-    }
-   
-    */
-}
- 
 
 
 
- 
-
-
- 
  
 
       ejecutar(){
-      this.savePredeterminados()
-      this.runGame()
-      this.reclamarPuntos()
-      this.closeBtnGame()
-
-   
+      //  this.mostrarMensaje()
+       this.runGame()
+       this.reclamarPuntos()
+       this.closeBtnGame()
+       this.savePredeterminados()
 
       
-    
-      
 
+  
     }
 
 

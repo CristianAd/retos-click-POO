@@ -209,7 +209,6 @@ const llevarTablero = new InterfazG()
               
               const irAltablero = document.getElementById("irAltablero")
               const tipoReto = document.getElementById("tipoReto").textContent
-             
               const jugadores = document.getElementById("jugadores")
   
               irAltablero.addEventListener("click", ()=>{
@@ -225,7 +224,8 @@ const llevarTablero = new InterfazG()
 
                    
 
-                   const premioDefinido = document.getElementById("premio")
+                   const premioDefinido = document.getElementById("premio").value
+                 
                     const nivelMeta = document.getElementById("value")
 
 
@@ -234,6 +234,7 @@ const llevarTablero = new InterfazG()
                     llevarTablero.showTable(tipoReto)
                     
                     llevarTablero.showPlayerNames(nJugad);
+                    llevarTablero.premio(premioDefinido)
                     
                     const zonaJugadores = document.getElementById("zonaJugadores").firstElementChild
                     zonaJugadores.style.backgroundColor = "#ff7f00"
@@ -244,6 +245,7 @@ const llevarTablero = new InterfazG()
                   const preuba1 =  new Interactivity()
                  // preuba1.runGame()
                  preuba1.ejecutar()
+                 document.getElementById("")
 
                     
                   }else{
@@ -256,6 +258,10 @@ const llevarTablero = new InterfazG()
               })
                 
               
+    }
+
+    showP(){
+      document.getElementById("")
     }
 
 

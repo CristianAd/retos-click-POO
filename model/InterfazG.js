@@ -42,6 +42,15 @@ export class InterfazG{
        
     }
 
+    premio(param){
+      const elPremio = document.querySelector(".elPremio")
+        if (param.trim() === "") {
+          elPremio.textContent = `Pídele un helado a tu mejor amig@`
+        }else{
+          elPremio.textContent = `${param}`
+        }
+    }
+
      
 
     showTable(param){
