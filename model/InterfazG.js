@@ -13,7 +13,7 @@ export class InterfazG{
 
       <div class="ruleta">
       <div class="area-superior-juego">
-                  <div class="metaJuego">La meta es: ${param} puntos </div>
+                  <div class="metaJuego">La meta es: <span id="metaJuego">${param}</span> puntos </div>
                   <div id="zonaJugadores">
 
                   </div>
@@ -119,29 +119,12 @@ export class InterfazG{
     }
 
 
-/* 
-    popUpJuegoActivo(){
-       
-      
-      const popUpJA = `<div id="popupContainer">
-      <div class="turnoJugador"></div>
-      <div id="popupBox">
-        <span id="closeButton"><img src="/assets/png/siguiente-boton.png" alt=""></span>
-        <p id="retoSelected">#</p>
-        <div class="cajaPuntos">0</div>
-        <div class="zonBtnReclamar"><button id="btnReclamar" >Reclamar</button></div>
-      </div>
-    </div>`
-   // const zonaG = document.getElementById("zonaG")
-    // zonaG.innerHTML = popUpJA
-   // const popUpGame = document.getElementById("popUpGame")
-     
-    
- 
-  
-  }
 
-*/
+
+    showGanador(){
+   
+          
+    }
 
 
 }

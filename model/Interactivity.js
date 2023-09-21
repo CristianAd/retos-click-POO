@@ -14,16 +14,9 @@ let colorOriginal; // Declarar la variable fuera de la función
 let secuencia = 0
 
 
+
+
 export class Interactivity{
-    constructor(){
-      this.tipoD = "Futbol Americano"
-
-    }
-
-    cambiaTipoD(nombre) {
-      this.tipoD = nombre;
-    }
-
 
 
 
@@ -41,21 +34,37 @@ conjuntoCajas() {
 
 
 reclamarPuntos(){
-  console.log(secuencia)
+  
+  const laMeta = document.getElementById("metaJuego")
+  console.log(laMeta.textContent)
+
   const jugadoresFull = document.getElementById("zonaJugadores")
    const numeroParticipantes = jugadoresFull.children.length
    
    btnReclamar.addEventListener("click", ()=>{
+
    
-    const valorPrevioP = jugadoresFull.children[secuencia].lastChild.textContent
-    jugadoresFull.children[secuencia].lastChild.textContent = parseInt(valorPrevioP) + numeroAleatorio + " pts" 
+
+      const valorPrevioP = jugadoresFull.children[secuencia].lastChild.textContent
+      popupContainer.style.display = "block"
+      const valorProximo = parseInt(valorPrevioP) + parseInt(numeroAleatorio)
+      jugadoresFull.children[secuencia].lastChild.textContent = valorProximo + " pts" 
+
+      btnReclamar.style.display = "none";
+      nextBtnGame.style.display = "block"
+      secuencia = (secuencia + 1) % numeroParticipantes
+      
+      if (valorProximo > parseInt(laMeta.textContent)) {
+        console.log("El "+ valorPrevioP + "supera a " + laMeta)
+      }
+  
    
-     secuencia = (secuencia + 1) % numeroParticipantes
-    
-    btnReclamar.style.display = "none";
-    nextBtnGame.style.display = "block"
    
     })
+
+
+
+
  
 }
 
@@ -110,13 +119,14 @@ closeBtnGame(){
    
 }
 
+mostrarTipoJ(param){
+    console.log(param)
+}
 
 
-  runGame(param){
-  
-     
-    console.log(this.tipoD)
-    
+  runGame(){
+ 
+
     let index = 0
     let jota = 0
     const elementos = this.conjuntoCajas()
@@ -144,18 +154,44 @@ closeBtnGame(){
   
         } else if(jota === numeroAleatorio){
             
+            
             ////////////////////
           document.getElementById("btnReclamar").style.display = "block"
 
       
-                    const popupContainer = document.getElementById("popupContainer");
+                  
                     const textoReto =  document.getElementById("retoSelected");
 
             /*OBTENER EL CONJUNTO DE RETOS */
+          
           function mostrarRetos() {
-            return retos
+            
+            const tipoJuegoEnTablero =  document.getElementById("elTitulo").textContent
+            switch (true) {
+              case tipoJuegoEnTablero.includes("Amistad"):
+                return retos.amistades;
+              case tipoJuegoEnTablero.includes("Deportivas"):
+                return retos.deportes;
+              case tipoJuegoEnTablero.includes("Noviazgo"):
+                return retos.noviazgos;
+              case tipoJuegoEnTablero.includes("Verdad o desafio"):
+                return retos.verdadyDesafio;
+              case tipoJuegoEnTablero.includes("Cocina"):
+                return retos.retosComida;
+              case tipoJuegoEnTablero.includes("Trivias"):
+                return retos.trivia
+              default:
+                return null
+               
+            }
+
         }
-          const todosLosRetos = mostrarRetos().amistades
+        
+       
+          const todosLosRetos = mostrarRetos()
+          console.log(todosLosRetos)
+
+    
           
   
           function retoGenerado() {
@@ -168,7 +204,7 @@ closeBtnGame(){
           document.querySelector('.cajaPuntos').innerHTML = numeroAleatorio
           /*Mostrar reto aleatorio */
                     textoReto.innerHTML= retoGenerado()
-                    popupContainer.style.display = "block";
+                   popupContainer.style.display = "block";
 
                   /////////
                    
@@ -189,12 +225,13 @@ closeBtnGame(){
   
           
                 } 
+              
   
       }
-
+      
       btnPush.disabled = true
       nextBtnGame.style.display = "none"
-      console.log("Bton Push activo")
+      
     }
    
     
@@ -202,10 +239,40 @@ closeBtnGame(){
    
   
 
- 
+
     
 
   }
+
+
+alertaGanador() {
+ // popupContainer.style.display = "none"
+ // document.getElementById("popupGanador").style.display = "block"
+ 
+  let puntos = ""
+  const ptsJugador =  document.querySelectorAll('.players')
+  for (let i = 0; i < ptsJugador.length; i++) {
+    puntos = parseInt(ptsJugador[i].lastChild.textContent);
+     if (puntos >= parseInt(laMeta)) {
+        popupContainer.style.display = "none";
+        document.getElementById('popupGanador').style.display = "block"
+        document.querySelector('.nombreGanador').innerHTML = ptsJugador[i].firstChild.textContent
+       console.log(ptsJugador[i].firstChild.textContent + ' ganaste!!')
+     }
+    
+  }
+  console.log(puntos)
+/*
+  if (puntos >= parseInt(laMeta)) {
+
+    if (JSON.parse(localStorage.getItem('valorPremio')) === "") {
+      document.querySelector('.zonaPremioGando').innerHTML = "Pídele un helado a tu mejor amig@"
+    }else{
+      document.querySelector('.zonaPremioGando').innerHTML = localStorage.getItem('valorPremio');
+    }
+   
+    */
+}
  
 
 
@@ -221,6 +288,8 @@ closeBtnGame(){
       this.runGame()
       this.reclamarPuntos()
       this.closeBtnGame()
+
+   
 
       
     

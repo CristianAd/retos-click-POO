@@ -2,13 +2,9 @@ import { InterfazG } from "./InterfazG.js";
 import { Interactivity } from "./Interactivity.js";
 
 const llevarTablero = new InterfazG()
-const titulo = new Interactivity()
 
-export class CustomJugadores {
-    constructor(){
-       
-
-    }
+ export class CustomJugadores {
+    constructor(){}
 
 
 
@@ -180,22 +176,44 @@ export class CustomJugadores {
        
     }
 
- 
+/*
+    domContenidoI(){
+      const titulo = document.getElementById("tipoReto").textContent
+      return titulo;
+    }
 
+    mostrarContenidoAnt(){
+      const playGame =  document.getElementById("playGame")
+
+      if (playGame !== null) {
+        playGame.addEventListener("click", ()=>{
+          const contenidoInicial = this.domContenidoI()
+          this.mostrarContenido(contenidoInicial);
+        })
+      }
+    }
+
+    mostrarContenido(param) {
+      console.log(param);
+    }
+ 
+*/
+
+ 
     capturaDatosJuego(){
-       
+                
+              
+              
               /* PRUEBA UNITARIA */
+
               
               const irAltablero = document.getElementById("irAltablero")
               const tipoReto = document.getElementById("tipoReto").textContent
-               
-              
-              
-
+             
               const jugadores = document.getElementById("jugadores")
   
               irAltablero.addEventListener("click", ()=>{
-                titulo.cambiaTipoD(tipoReto)
+                
   
                   if (jugadores.childElementCount > 0) {
                     console.log("Puedes ir al juego")
@@ -212,12 +230,11 @@ export class CustomJugadores {
 
 
                     llevarTablero.tablero(nivelMeta.textContent)
+                    
                     llevarTablero.showTable(tipoReto)
                     
                     llevarTablero.showPlayerNames(nJugad);
                     
-                    
-
                     const zonaJugadores = document.getElementById("zonaJugadores").firstElementChild
                     zonaJugadores.style.backgroundColor = "#ff7f00"
                     
@@ -246,3 +263,4 @@ export class CustomJugadores {
 
 
 }
+
