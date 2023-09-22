@@ -6,11 +6,14 @@ import {retos} from "../data/retos.js"
 const btnReclamar = new InterfazElements().btnReclamar
 const nextBtnGame = new InterfazElements().nextBtn
 const popupContainer = new InterfazElements().popUpGameActive
-const numeroAleatorio = new InterfazElements().generarNumAleatorio()
+ 
 
 
 let colorOriginal; // Declarar la variable fuera de la función
 let secuencia = 0
+let index = 0
+let jota = 0
+let numeroAleatorio = null
 
 export class Interactivity{
  
@@ -38,6 +41,8 @@ reclamarPuntos(){
    const numeroParticipantes = jugadoresFull.children.length
    
    btnReclamar.addEventListener("click", ()=>{
+
+  
 
     const valorPrevioP = jugadoresFull.children[secuencia].lastChild.textContent
     const valorProximo = parseInt(valorPrevioP) + parseInt(numeroAleatorio);
@@ -127,6 +132,10 @@ pintarSiguiente(indice){
 closeBtnGame(){
   
    nextBtnGame.addEventListener("click", ()=>{
+    index = 0 /* Reestableemos el valor a cero, porque en el primer clic index valor se conserva */
+    jota = 0 /* Reestableemos el valor a cero, porque en el primer clic jota valor se conserva */
+    console.log(index, jota)
+     numeroAleatorio = this.generarNumAleatorio() /* Regeneramos un nuevo num Aleatorio */
     
     popupContainer.style.display = "none"
 
@@ -148,19 +157,27 @@ closeBtnGame(){
    
 }
 
+generarNumAleatorio() {
+  const numAleat = Math.floor(Math.random() * 12) + 1;
+  return numAleat
+}
+
 
   runGame(){
- 
 
-    let index = 0
-    let jota = 0
+        numeroAleatorio = this.generarNumAleatorio()
+    console.log(numeroAleatorio)
+      
+
+
     const elementos = this.conjuntoCajas()
     console.log(index, jota)
   
 //////////////////////////////////////////
     const btnPush = document.getElementById("playGame")
     btnPush.addEventListener("click", 
-     
+  
+    
     function pintarCuadros() {  
       if (index < elementos.length) {
         elementos[index].style.backgroundColor = "rgb(147, 0, 255)";
@@ -254,9 +271,12 @@ closeBtnGame(){
       
       btnPush.disabled = true
       nextBtnGame.style.display = "none"
+ 
        
       
-    })
+    }
+    
+    )
    
   
  
@@ -275,7 +295,7 @@ closeBtnGame(){
   }
 
 
-
+// 
  
 
       ejecutar(){
