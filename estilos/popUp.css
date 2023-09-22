@@ -78,12 +78,22 @@
 }
 
 #tituloReto h2{
-    margin-left: calc(30%);
+    margin-left: 0.4rem;
+    display: flex;
+    width: calc(80% - 10px) ;
+    justify-content: space-evenly;
 }
 
+#value{
+  border: 0.2rem solid rgba(83, 20, 143, 0.5);
+  border-radius: 100%;
+  padding: 0.2rem;
+}
+ 
+
 #tituloReto span{
-     border: 1px solid black;
-     margin-right: 0.8rem;
+     border: 2px solid  white;
+     background-color: #a8033a;
      font-size: x-large;
      padding: 0.3rem 1rem;
      cursor: pointer;
@@ -125,7 +135,7 @@
 }
 
 .eliminar{
-  background-color: rgb(74, 82, 46);
+  background-image: radial-gradient(circle at -16.45% 74.18%, #ffcb8d 0, #ffcf83 5%, #ffd278 10%, #ffd46f 15%, #ffd666 20%, #efd65e 25%, #dbd657 30%, #c4d552 35%, #aad34f 40%, #8dd04e 45%, #6acc50 50%, #39c755 55%, #00c35e 60%, #00be69 65%, #00ba77 70%, #00b787 75%, #00b398 80%, #00b0ab 85%, #00aebd 90%, #00acd0 95%, #00aae2 100%);
   color: aliceblue;
  
   padding: 0.3rem;
@@ -147,7 +157,7 @@
 .jugador input{
      padding: 0.5rem;
      margin-right: 0.5rem;
-     background-color: rgb(214, 214, 71);
+     background-image: radial-gradient(circle at -16.45% 74.18%, #ffcb8d 0, #ffcf83 5%, #ffd278 10%, #ffd46f 15%, #ffd666 20%, #efd65e 25%, #dbd657 30%, #c4d552 35%, #aad34f 40%, #8dd04e 45%, #6acc50 50%, #39c755 55%, #00c35e 60%, #00be69 65%, #00ba77 70%, #00b787 75%, #00b398 80%, #00b0ab 85%, #00aebd 90%, #00acd0 95%, #00aae2 100%);
 }
 
 #premio{
@@ -252,15 +262,42 @@ button#btnReclamar:hover {
   justify-content: space-around;
   flex-direction: column;
   width: 90vw;
-  background-color: #fff;
+  background-image: radial-gradient(circle at 51.48% 33.1%, #ff6dbb 0, #ff67be 10%, #f960bc 20%, #d958b5 30%, #b54ea9 40%, #8f4397 50%, #6b3783 60%, #4c2d70 70%, #312560 80%, #181e52 90%, #001846 100%);
   padding: 20px;
   text-align: center;
  
 }
-.btnReintentar{
+
+.zonaPerdedores img{
+    width: calc(50% - 10px);
+
+}
+.zonaPerdedores h3{
+  color: #4fee2f;
+
+}
+
+#Perdedores{
+  font-weight: 700;
+  color: #f2b42c;
+}
+
+#txtPremio{
+  border: 1px solid blanchedalmond;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+ 
+.headGanador{
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
+  text-shadow: 
+  -1px -1px 0 #fff, /* Sombra superior izquierda (blanco) */
+  1px -1px 0 #fff, /* Sombra superior derecha (blanco) */
+  -1px 1px 0 #fff, /* Sombra inferior izquierda (blanco) */
+  1px 1px 0 #fff;;
+  
  
 }
 
@@ -268,6 +305,11 @@ button#btnReclamar:hover {
   font-size: 36px;
   font-weight: bold;
   margin: 20px 0;
+  text-shadow: 
+  -1px -1px 0 #fff, /* Sombra superior izquierda (blanco) */
+  1px -1px 0 #fff, /* Sombra superior derecha (blanco) */
+  -1px 1px 0 #fff, /* Sombra inferior izquierda (blanco) */
+  1px 1px 0 #fff;;
 }
 .zonaPremioGando {
   font-size: 24px;

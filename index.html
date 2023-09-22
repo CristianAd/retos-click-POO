@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.icon" type="image/png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon"  href="./assets/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./estilos/popUp.css">
     <link rel="stylesheet" href="./estilos/interfazg.css">
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>Retosclick 1.1.0</title>
 </head>
 <body>
 
     <header>
-        <img class="logo" src="./assets/logo-retosclic.png" alt="logo retos-click">
-         
+        <img class="logo" src="./assets/logo-retosclic.png" alt="logo retos-click">   
         <button class="abrirMenu" id="abrir" ><i class="bi bi-list"></i></button>
         <nav class="nav" id="nav">
             <button id="cerrar" class="cerrar-menu" ><i class="bi bi-x-circle"></i></button>
             <ul class="nav-list">
-                <li><a href="">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="">Blog</a></li>
                 <li><a href="">Instrucciones</a></li>
                 <li><a href="">Politicas de privacidad</a></li>
@@ -32,12 +30,12 @@
     <main id="zonaG">
                 <div id="popUpHome"></div>
              <div id="tarjetasHome">
-                <div id="deportivas">Deportivas</div>
-                <div id="noviazgo">Noviazgo</div> 
-                <div id="trivias">Trivias</div>
-                <div id="verdadDesafio">Verdad o desafio</div>
-                <div id="cocina">Cocina</div>
-                <div id="amistad">Amistad</div>
+                <div id="deportivas"> <img src="./assets/png/deporte.png" alt="Retos deportivos">Deportivas</div>
+                <div id="noviazgo"><img src="./assets/png/noviazgo.png" alt="Retos para Noviazgo">Noviazgo</div> 
+                <div id="trivias"><img src="./assets/png/adivino.png" alt="Trivias">Trivias</div>
+                <div id="verdadDesafio"><img src="/assets/png/retos.png" alt="Verdad o desafio">Verdad o desafío</div>
+                <div id="cocina"><img src="./assets/png/cocina.png" alt="Retos de Cocina">Cocina</div>
+                <div id="amistad"><img src="./assets/png/amigo.png" alt="Retos de amigos">Amistad</div>
             </div>
             
     </main>
@@ -49,7 +47,7 @@
               <span id="closeButton"><img src="./assets/png/siguiente-boton.png" alt=""></span>
               <p id="retoSelected">#</p>
               <div class="cajaPuntos">0</div>
-              <div class="zonBtnReclamar"><button id="btnReclamar" >Reclamar</button></div>
+              <div class="zonBtnReclamar"><button id="btnReclamar">Reclamar</button></div>
             </div>
           </div>
 
@@ -58,7 +56,7 @@
     <div id="popupGanador">
       <div id="cajaGanador">
         <div>
-          <div class="btnReintentar">¡FELICITACIONES!</div>
+          <div class="headGanador">¡FELICITACIONES!</div>
           <img src="./assets/png/happy-new-year.png" alt="">
           <div class="nombreGanador">ELGANADOR</div>
         </div>
@@ -66,8 +64,11 @@
           
           <div class="zonaPremioGando" style="font-weight: 800;"></div>
           <div class="elPremio"></div>
-           <p>¿Quén pagará el premio?</p>
-           <div id="Perdedores"></div>
+          <div class="zonaPerdedores">
+            <img src="./assets/png/sorpresa.png" alt="reto sorpresa">
+             <h3>¿Quén pagará el premio?</h3>
+             <div id="Perdedores"></div>
+          </div>
             
         </div>
         <span class="homeBtn2" onclick="window.location.href='index.html'"><img src="/assets/png/casa.png" alt="home-G"></span>

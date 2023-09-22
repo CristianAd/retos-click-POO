@@ -15,7 +15,7 @@ export const retos = {
     ],
    
     deportes:  [
-    "Haz 10 saltos de tijera cada por cada letra de tu nombre",
+    "Haz 10 saltos de tijera por cada letra de tu nombre",
     "Camina alrededor de tu casa o de la oficina durante 10 minutos",
     "Haz 3 series de 10 sentadillas antes de desayunar",
     "Realiza 5 minutos de estiramientos",

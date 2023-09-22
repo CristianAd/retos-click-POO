@@ -24,7 +24,7 @@ export class InterfazG{
                 <div class="zonaMedia">
                     <div class="leftZone"></div>
                     <div style="display: flex;justify-content: center; flex-direction: column; align-items: center; height: 90%;">
-                          <h2 style="margin-top: 0; color: aliceblue;" id="elTitulo">TIPO JUEGO</h2>
+                          <h2 id="elTitulo">TIPO JUEGO</h2>
                             <button id="playGame">Go!!</button>
 
                         </div>
@@ -33,7 +33,7 @@ export class InterfazG{
                 </div>
                 <div class="bottomZone"></div>
                 <div class="menuBtnHomeZone">
-                <div> <input class="homeBtn" type="button" onclick="window.location.href='index.html'" value="HOME"> </div>
+  
                 </div>
       </div>
                         `
@@ -45,9 +45,9 @@ export class InterfazG{
     premio(param){
       const elPremio = document.querySelector(".elPremio")
         if (param.trim() === "") {
-          elPremio.textContent = `Pídele un helado a tu mejor amig@`
+          elPremio.innerHTML = `<div id="txtPremio"><h3>GIFT :</h3><h4>Pídele un helado a tu mejor amig@</h4></div>`
         }else{
-          elPremio.textContent = `${param}`
+          elPremio.innerHTML = `<div id="txtPremio"><h3>GIFT :</h3> ${param}</div>`
         }
     }
 

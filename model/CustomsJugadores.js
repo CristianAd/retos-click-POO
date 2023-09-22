@@ -12,8 +12,6 @@ const llevarTablero = new InterfazG()
 
       /* MUESTRA NUMERO JUGADORES */
 
-        
-      
   ///////////////////////////////////////
         
             

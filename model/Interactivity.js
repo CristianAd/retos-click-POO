@@ -180,7 +180,7 @@ generarNumAleatorio() {
     
     function pintarCuadros() {  
       if (index < elementos.length) {
-        elementos[index].style.backgroundColor = "rgb(147, 0, 255)";
+        elementos[index].style.backgroundColor = "#9300FF"
         index++;
         setTimeout(pintarCuadros, 200);
       } else if (index === elementos.length) {
@@ -188,7 +188,7 @@ generarNumAleatorio() {
         if (jota < numeroAleatorio ) {
   
     
-          elementos[jota].style.backgroundColor = "blue";
+          elementos[jota].style.backgroundColor  = "#E0BB0E";
          
           jota++
           setTimeout(pintarCuadros, 200);

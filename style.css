@@ -5,7 +5,7 @@
 }
 
 header{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
@@ -48,29 +48,81 @@ main{
     justify-content: space-between;
     align-content: flex-start;  
     width: 35rem;
-    border: 1px solid rgb(0, 0, 0);
     margin-top: 2rem;
+     
+    
     
 }
 
 /*  #deportivas, #noviazgo, #trivias, #verdadDesafio, #cocina, #amistad  */
 #deportivas, #noviazgo, #trivias, #verdadDesafio, #cocina, #amistad{
+    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     width: calc(30% - 10px);
     border: 1px solid blueviolet;
     height: 10rem;
     margin-bottom: 10px;
     cursor: pointer;
+    border-radius: 1rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    
+   
+    
+    
  
 }
+
+  #deportivas {
+    background:   linear-gradient(180deg, rgba(255, 153, 0, 0.96) 48%, rgba(246.50, 236.23, 236.23, 0) 100%);
+    color: white;
+  
+  }
+  
+  #noviazgo {
+    background: linear-gradient(227deg, #F7CAC9 26%, #D2FFFC 51%, #F7CAC9 77%, #F7CAC9 100%);
+  }
+  
+  #trivias {
+    background: linear-gradient(227deg, #2980B9 26%, #A0FFF9 53%, #00ED98 70%, #04AA0A 100%);
+   
+  }
+  
+  #verdadDesafio {
+    background: linear-gradient(206deg, rgba(246.50, 236.23, 236.23, 0) 0%, rgba(229.50, 226.82, 222.81, 0.96) 0%, rgba(205.75, 122.59, 194.51, 0.96) 31%, rgba(185.94, 35.64, 170.91, 0.96) 57%, rgba(66.30, 0, 255, 0.96) 95%);
+    color: white;
+  }
+  
+  #cocina {
+    background: linear-gradient(140deg, #5A96FB 20%, #EB61DD 40%, rgba(85.85, 196.91, 204, 0.69) 54%, #D178FB 70%, #96e2ab 88%, #96e2ab 88%);
+     
+  }
+  
+  #amistad {
+    background: linear-gradient(141deg, #FFE500 26%, #E5E5E5 50%, #0EB8DD 66%, #CB35FF 100%);
+    color: #191a1b;
+  }
 
 
 /*MEDIA*/
 
 @media screen and (max-width:550px) {
+    .area-superior-juego{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        
+    }
    
+
+    .ruleta{
+        margin: auto 1rem;
+    }
      .abrirMenu, .cerrar-menu{
         display: block;
         border: 0;
@@ -104,6 +156,7 @@ main{
         background-color: #2c2c2c;
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
+        
     }
 
    .nav.visible{
@@ -126,6 +179,7 @@ main{
     #tarjetasHome{
    
         margin: auto 1rem;
+       
 
     }
     #tarjetasHome div{

@@ -11,12 +11,4 @@ export class InterfazElements{
 
 
 
-    generarNumAleatorio() {
-        const numAleat = Math.floor(Math.random() * 12) + 1;
-        return numAleat
-      }
-
-
-
-
 }
