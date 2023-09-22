@@ -35,7 +35,7 @@ conjuntoCajas() {
 reclamarPuntos(){
   
   const laMeta = document.getElementById("metaJuego")
-  console.log(laMeta.textContent)
+
 
   const jugadoresFull = document.getElementById("zonaJugadores")
    const numeroParticipantes = jugadoresFull.children.length
@@ -49,7 +49,6 @@ reclamarPuntos(){
   
 
       if (valorProximo >= parseInt(laMeta.textContent)) {
-        console.log("El "+ valorProximo + "supera a " + parseInt(laMeta.textContent))
         popupContainer.style.display = "none"
         document.getElementById("popupGanador").style.display = "block"
         document.querySelector('.nombreGanador').innerHTML = jugadoresFull.children[secuencia].firstChild.textContent 
@@ -76,7 +75,7 @@ reclamarPuntos(){
                          // Muestra los elementos que no aparecen en la consola
 
                          document.getElementById("Perdedores").innerText = noAparecen.join(', ')
-                           console.log("Elementos que no aparecen: " + noAparecen.join(', '));
+                          
 
         
       }else{
@@ -134,7 +133,7 @@ closeBtnGame(){
    nextBtnGame.addEventListener("click", ()=>{
     index = 0 /* Reestableemos el valor a cero, porque en el primer clic index valor se conserva */
     jota = 0 /* Reestableemos el valor a cero, porque en el primer clic jota valor se conserva */
-    console.log(index, jota)
+  
      numeroAleatorio = this.generarNumAleatorio() /* Regeneramos un nuevo num Aleatorio */
     
     popupContainer.style.display = "none"
@@ -166,12 +165,11 @@ generarNumAleatorio() {
   runGame(){
 
         numeroAleatorio = this.generarNumAleatorio()
-    console.log(numeroAleatorio)
       
 
 
     const elementos = this.conjuntoCajas()
-    console.log(index, jota)
+
   
 //////////////////////////////////////////
     const btnPush = document.getElementById("playGame")
@@ -229,14 +227,11 @@ generarNumAleatorio() {
         
        
           const todosLosRetos = mostrarRetos()
-          console.log(todosLosRetos)
-
-    
           
+
   
           function retoGenerado() {
             const resultadoReto = numeroAleatorio - 1
-            console.log(resultadoReto, todosLosRetos[resultadoReto])
              return todosLosRetos[resultadoReto]
           }
   
@@ -285,29 +280,20 @@ generarNumAleatorio() {
 
   }
 
-  mostrarMensaje(){
-    document.getElementById("playGame").addEventListener("click", ()=>{
-       
-      console.log("hola")
-      
-    
-    })
-  }
+
 
 
 // 
  
 
       ejecutar(){
-      //  this.mostrarMensaje()
+        
        this.runGame()
        this.reclamarPuntos()
        this.closeBtnGame()
        this.savePredeterminados()
 
-      
 
-  
     }
 
 

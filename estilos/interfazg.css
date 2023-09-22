@@ -101,6 +101,10 @@
        
 }
 
+    
+    .tableroJuego{
+        box-shadow: 5px 5px 10px #D60268;
+    }
 
 .menuBtnHomeZone{
    width: 100%;

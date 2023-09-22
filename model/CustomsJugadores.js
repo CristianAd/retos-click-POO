@@ -109,7 +109,7 @@ const llevarTablero = new InterfazG()
 
         const jugadores = document.getElementById("jugadores")
         const numerodeJugadores = jugadores.childElementCount
-        console.log(numerodeJugadores)
+       
          
         const irAltablero=document.getElementById("irAltablero")
         irAltablero.style.display = "block"
@@ -120,84 +120,92 @@ const llevarTablero = new InterfazG()
     }
  
     ajustesMeta(){
-        const slider = document.getElementById("slider");
-        const sliderButton = document.getElementById("slider-button");
-        const valueSpan = document.getElementById("value");
+      const slider = document.getElementById("slider");
+      const sliderButton = document.getElementById("slider-button");
+      const valueSpan = document.getElementById("value");
 
-        const minValue = 12;
-        const maxValue = 50;
+      const minValue = 12;
+      const maxValue = 50;
 
-        // Inicializa el valor del slider
-        let sliderValue = minValue;
-        valueSpan.textContent = sliderValue;
+      // Inicializa el valor del slider
+      let sliderValue = minValue;
+      valueSpan.textContent = sliderValue;
 
-        // Evento de arrastre del botón
-        sliderButton.addEventListener("mousedown", (e) => {
-            e.preventDefault();
+      // Función para actualizar la posición y valor del slider
+      function updateSlider(newLeft) {
+          if (newLeft < 0) {
+              newLeft = 0;
+          } else if (newLeft > slider.clientWidth - sliderButton.clientWidth) {
+              newLeft = slider.clientWidth - sliderButton.clientWidth;
+          }
 
-            // Registra la posición inicial del mouse
-            const startX = e.clientX;
-            const startLeft = sliderButton.offsetLeft;
+          // Calcula el valor correspondiente al desplazamiento
+          const range = maxValue - minValue;
+          sliderValue = minValue + Math.round((newLeft / (slider.clientWidth - sliderButton.clientWidth)) * range);
 
-            // Evento de movimiento del mouse
-            const onMouseMove = (e) => {
-                const offsetX = e.clientX - startX;
-                let newLeft = startLeft + offsetX;
-
-                // Limita la posición del botón dentro del slider
-                if (newLeft < 0) {
-                    newLeft = 0;
-                } else if (newLeft > slider.clientWidth - sliderButton.clientWidth) {
-                    newLeft = slider.clientWidth - sliderButton.clientWidth;
-                }
-
-                // Calcula el valor correspondiente al desplazamiento
-                const range = maxValue - minValue;
-                sliderValue = minValue + Math.round((newLeft / (slider.clientWidth - sliderButton.clientWidth)) * range);
-
-                // Actualiza la posición del botón y el valor mostrado
-                sliderButton.style.left = newLeft + "px";
-                valueSpan.textContent = sliderValue;
-            };
-
-            // Evento de liberación del botón del mouse
-            const onMouseUp = () => {
-                // Elimina los eventos de movimiento y liberación del mouse
-                document.removeEventListener("mousemove", onMouseMove);
-                document.removeEventListener("mouseup", onMouseUp);
-            };
-
-            // Agrega los eventos de movimiento y liberación del mouse
-            document.addEventListener("mousemove", onMouseMove);
-            document.addEventListener("mouseup", onMouseUp);
-        });
-       
-    }
-
-/*
-    domContenidoI(){
-      const titulo = document.getElementById("tipoReto").textContent
-      return titulo;
-    }
-
-    mostrarContenidoAnt(){
-      const playGame =  document.getElementById("playGame")
-
-      if (playGame !== null) {
-        playGame.addEventListener("click", ()=>{
-          const contenidoInicial = this.domContenidoI()
-          this.mostrarContenido(contenidoInicial);
-        })
+          // Actualiza la posición del botón y el valor mostrado
+          sliderButton.style.left = newLeft + "px";
+          valueSpan.textContent = sliderValue;
       }
+
+      // Evento de arrastre del botón - Mouse
+      sliderButton.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+
+          // Registra la posición inicial del mouse
+          const startX = e.clientX;
+          const startLeft = sliderButton.offsetLeft;
+
+          // Evento de movimiento del mouse
+          const onMouseMove = (e) => {
+              const offsetX = e.clientX - startX;
+              let newLeft = startLeft + offsetX;
+              updateSlider(newLeft);
+          };
+
+          // Evento de liberación del botón del mouse
+          const onMouseUp = () => {
+              // Elimina los eventos de movimiento y liberación del mouse
+              document.removeEventListener("mousemove", onMouseMove);
+              document.removeEventListener("mouseup", onMouseUp);
+          };
+
+          // Agrega los eventos de movimiento y liberación del mouse
+          document.addEventListener("mousemove", onMouseMove);
+          document.addEventListener("mouseup", onMouseUp);
+      });
+
+      // Evento de arrastre del botón - Táctil
+      sliderButton.addEventListener("touchstart", (e) => {
+          e.preventDefault();
+
+          // Registra la posición inicial del toque
+          const touch = e.touches[0];
+          const startX = touch.clientX;
+          const startLeft = sliderButton.offsetLeft;
+
+          // Evento de movimiento táctil
+          const onTouchMove = (e) => {
+              const touch = e.touches[0];
+              const offsetX = touch.clientX - startX;
+              let newLeft = startLeft + offsetX;
+              updateSlider(newLeft);
+          };
+
+          // Evento de liberación del toque
+          const onTouchEnd = () => {
+              // Elimina los eventos de movimiento y liberación táctiles
+              document.removeEventListener("touchmove", onTouchMove);
+              document.removeEventListener("touchend", onTouchEnd);
+          };
+
+          // Agrega los eventos de movimiento y liberación táctiles
+          document.addEventListener("touchmove", onTouchMove);
+          document.addEventListener("touchend", onTouchEnd);
+      });
     }
 
-    mostrarContenido(param) {
-      console.log(param);
-    }
- 
-*/
 
- 
     capturaDatosJuego(){
                 
               
@@ -213,7 +221,7 @@ const llevarTablero = new InterfazG()
                 
   
                   if (jugadores.childElementCount > 0) {
-                    console.log("Puedes ir al juego")
+                    
 
                     const jugadores = document.getElementById("jugadores");
                     const nJugad = Array.from(jugadores.children).map(nJugad => {

@@ -10,31 +10,28 @@ export class InterfazG{
       const zonaG = document.getElementById("zonaG")
       tarjetasHome.innerHTML = ""
       const tableroG = `   
-
       <div class="ruleta">
       <div class="area-superior-juego">
                   <div class="metaJuego">La meta es: <span id="metaJuego">${param}</span> puntos </div>
-                  <div id="zonaJugadores">
-
-                  </div>
+                  <div id="zonaJugadores"></div>
                       
                     
                 </div>
+                
+                <div class="tableroJuego">
                 <div class="topZone"></div>
-                <div class="zonaMedia">
-                    <div class="leftZone"></div>
-                    <div style="display: flex;justify-content: center; flex-direction: column; align-items: center; height: 90%;">
-                          <h2 id="elTitulo">TIPO JUEGO</h2>
-                            <button id="playGame">Go!!</button>
-
-                        </div>
-                   
-                    <div class="rigthZone"></div>
+                  <div class="zonaMedia">
+                      <div class="leftZone"></div>
+                      <div style="display: flex;justify-content: center; flex-direction: column; align-items: center; height: 90%;">
+                            <h2 id="elTitulo">TIPO JUEGO</h2>
+                              <button id="playGame">Go!!</button>
+                          </div>
+                  
+                      <div class="rigthZone"></div>
+                  </div>
+                  <div class="bottomZone"></div>
                 </div>
-                <div class="bottomZone"></div>
-                <div class="menuBtnHomeZone">
-  
-                </div>
+         
       </div>
                         `
       //  tarjetasHome.classList.remove("tarjetasHome")

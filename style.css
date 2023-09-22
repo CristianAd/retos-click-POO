@@ -70,11 +70,8 @@ main{
     border-radius: 1rem;
     font-family: sans-serif;
     font-weight: 700;
+    box-shadow: 5px 5px 10px #D60268;
     
-   
-    
-    
- 
 }
 
   #deportivas {
@@ -122,7 +119,9 @@ main{
 
     .ruleta{
         margin: auto 1rem;
+       
     }
+
      .abrirMenu, .cerrar-menu{
         display: block;
         border: 0;
