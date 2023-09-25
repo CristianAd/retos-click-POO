@@ -212,7 +212,7 @@ generarNumAleatorio() {
                 return retos.deportes;
               case tipoJuegoEnTablero.includes("Noviazgo"):
                 return retos.noviazgos;
-              case tipoJuegoEnTablero.includes("Verdad o desafio"):
+              case tipoJuegoEnTablero.includes("verdadyDesafio"):
                 return retos.verdadyDesafio;
               case tipoJuegoEnTablero.includes("Cocina"):
                 return retos.retosComida;
